@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "EvalForge",
+    "description": "从 ClinicalTrials.gov 真实注册记录自动构造可追溯的医学评测题库，并在 Harness 内完成多模型评测与题目质量分析。"
+  },
+  "nav": "EvalForge",
+  "tabs": {
+    "data": "数据采集",
+    "builder": "题库构建",
+    "eval": "模型评测",
+    "meta": "Meta-Eval",
+    "reports": "报告导出"
+  }
+}

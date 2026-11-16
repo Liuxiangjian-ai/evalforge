@@ -1,0 +1,2037 @@
+{
+  "generated_at": "2026-11-16T14:11:41.154Z",
+  "plugin_version": "0.1.0",
+  "run": {
+    "id": "run-20261116140420-yydlyz",
+    "label": "EvalForge acceptance run",
+    "status": "completed_with_errors",
+    "created_at": "2026-11-16T14:04:20.386Z",
+    "updated_at": "2026-11-16T14:11:33.009Z",
+    "benchmark_id": "evalforge-type-2-diabetes-2026-11-16-7ste",
+    "benchmark_name": "EvalForge Type 2 Diabetes v0.1",
+    "benchmark_hash": "00fa7d88055bcea2e80a4969ad5df90ee80fc847fc8c6ef03b6b27b86cbf1c77",
+    "benchmark_schema_version": "0.1.0",
+    "prompt_version": "evalforge-mcq-v2",
+    "models": [
+      {
+        "id": "native-1",
+        "kind": "native",
+        "label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "provider": "deepseek-account",
+        "model": "deepseek-flash",
+        "base_url": "",
+        "key_ref": "",
+        "temperature": 0.2,
+        "max_tokens": 8192,
+        "timeout_ms": 120000
+      },
+      {
+        "id": "native-2",
+        "kind": "native",
+        "label": "deepseek-account · DeepSeek-V4-Pro",
+        "provider": "deepseek-account",
+        "model": "deepseek-v4-pro",
+        "base_url": "",
+        "key_ref": "",
+        "temperature": 0.2,
+        "max_tokens": 8192,
+        "timeout_ms": 120000
+      }
+    ],
+    "settings": {
+      "temperature": 0.2,
+      "maxTokens": 8192,
+      "concurrency": 3,
+      "retries": 1,
+      "timeoutMs": 180000,
+      "repeats": 1,
+      "shuffle_options": false,
+      "include_needs_review": false,
+      "include_invalid": false,
+      "include_experimental": false
+    },
+    "capability_groups": null,
+    "version_order": null,
+    "items": [
+      {
+        "id": "MED-000050",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Obesity, Diabetes.\nRegistry title: \"Investigating the Use of Quercetin on Glucose Absorption in Obesity, and Obesity With Type 2 Diabetes\".\nRegistry summary: \"Quercetin is a compound naturally found in various foods. It may have some role in the treatment of obesity and diabetes. The purpose of this study is to investigate research volunteers with obesity or obesity with type 2 diabetes to determine whether quercetin affects the way glucose is absorbed by the body. Thirty two participants aged 19 to 65 who are considered to be medically obese or obese with type 2 diabetes will be enrolled in this study. Before the onset of treatment, they will undergo a medical history,…\"\nPlanned phase: Phase 2. Study type: INTERVENTIONAL.\nPlanned interventions: OTHER: Quercetin; OTHER: Placebo.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Does quercetin effect glucose absorption (End of study)",
+          "B": "Change in HOMA-IR from baseline to week 12 (Baseline and week 12)",
+          "C": "Change from Baseline in M-value (Baseline up to Month 3)",
+          "D": "Change in C-Peptide from baseline to week 12 (Baseline and week 12)"
+        },
+        "ground_truth": {
+          "answer": "A",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Does quercetin effect glucose absorption (End of study)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT00065676",
+          "source_url": "https://clinicaltrials.gov/study/NCT00065676",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-12|2026-01-22|2003-07-31"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Obesity",
+          "phase": "PHASE2",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-12"
+        }
+      },
+      {
+        "id": "MED-000051",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Overweight or Obesity, CKD, Type 2 Diabetes.\nRegistry title: \"A Study of Retatrutide (LY3437943) on Renal Function in Participants With Overweight or Obesity and Chronic Kidney Disease With or Without Type 2 Diabetes\".\nRegistry summary: \"The main purpose of this study is to investigate the effect of retatrutide on renal function in participants with overweight or obesity and chronic kidney disease (CKD), with or without Type 2 Diabetes (T2D). The study will last around 31 weeks.\"\nPlanned phase: Phase 2. Study type: INTERVENTIONAL.\nPlanned interventions: DRUG: Retatrutide; DRUG: Placebo.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Percentage of Participants With Grade 4 Hyperglycemia Adverse Events (AEs) After Cycle 1 (Up to approximately 21 months)",
+          "B": "Tifeglipron vs. Placebo: Change in Glycated Hemoglobin (HbA1c) from Baseline at Week 30 (Baseline to Week 30)",
+          "C": "Change From Baseline in Measured Glomerular Filtration Rate (mGFR) Using Iohexol Clearance at Week 24 (Baseline, Week 24)",
+          "D": "Number of participants with Stage 3 Type 1 Diabetes based on American Diabetes Association criteria (From baseline up to Week 104)"
+        },
+        "ground_truth": {
+          "answer": "C",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Change From Baseline in Measured Glomerular Filtration Rate (mGFR) Using Iohexol Clearance at Week 24 (Baseline, Week 24)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT05936151",
+          "source_url": "https://clinicaltrials.gov/study/NCT05936151",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-09|2026-11|2023-07-07"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Overweight or Obesity",
+          "phase": "PHASE2",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-09"
+        }
+      },
+      {
+        "id": "MED-000052",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Type 2 Diabetes.\nRegistry title: \"Effect of Retatrutide Compared With Placebo in Participants With Type 2 Diabetes and Moderate or Severe Renal Impairment, With Inadequate Glycemic Control on Basal Insulin, With or Without Metformin and/or SGLT2 Inhibit…\".\nRegistry summary: \"The purpose of this study is to investigate the efficacy and safety of retatrutide compared with placebo in participants with Type 2 Diabetes and renal impairment, with inadequate glycemic control on basal insulin alone or a combination of basal insulin with or without metformin and/or sodium-glucose cotransporter-2 (SGLT2) inhibitor. The study will last about 14 months and may include up to 22 visits.\"\nPlanned phase: Phase 3. Study type: INTERVENTIONAL.\nPlanned interventions: DRUG: Retatrutide; DRUG: Placebo.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Changes in Mean Sitting Systolic Blood Pressure (MSSBP) (12 Weeks)",
+          "B": "Change from Baseline in Hemoglobin A1c (HbA1c) (%) (Baseline, Week 52)",
+          "C": "Change in Homeostatic Model Assessment of Insulin Resistance (HOMA-IR) (Baseline to Week 12)",
+          "D": "Percentage Change in Body Weight from Baseline (From Baseline to Week 64)"
+        },
+        "ground_truth": {
+          "answer": "B",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Change from Baseline in Hemoglobin A1c (HbA1c) (%) (Baseline, Week 52)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT06297603",
+          "source_url": "https://clinicaltrials.gov/study/NCT06297603",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-13|2026-11|2024-03-07"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-13"
+        }
+      },
+      {
+        "id": "MED-000053",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Type 2 Diabetes, Hypertension.\nRegistry title: \"A Randomized, Double-blind, Multi-center, Active-controlled, Phase 3 Clinical Trial to Evaluate the Efficacy and Safety of Combination Therapy of THP-00101, THP-00102, and THP-00103 in Subjects With T2DM and Essential H…\".\nPlanned phase: Phase 3. Study type: INTERVENTIONAL.\nPlanned interventions: DRUG: THP-00101; DRUG: THP-00102; DRUG: THP-00103; DRUG: THP-00104.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Time to first event of cardiovascular (CV) death or heart failure event (HFE) (Up to 51 months)",
+          "B": "Number of participants achieving at Least a 5% Reduction in Body Weight From Baseline at Week 64 (up to 64 weeks)",
+          "C": "Changes in Hemoglobin A1c (HbA1c) (12 weeks); Changes in Mean Sitting Systolic Blood Pressure (MSSBP) (12 Weeks)",
+          "D": "Change in Homeostatic Model Assessment of Insulin Resistance (HOMA-IR) (Baseline to Week 12)"
+        },
+        "ground_truth": {
+          "answer": "C",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Changes in Hemoglobin A1c (HbA1c) (12 weeks); Changes in Mean Sitting Systolic Blood Pressure (MSSBP) (12 Weeks)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT06647745",
+          "source_url": "https://clinicaltrials.gov/study/NCT06647745",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-09|2026-11|2024-10-18"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-09"
+        }
+      },
+      {
+        "id": "MED-000054",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Type 2 Diabetes Mellitus (T2DM).\nRegistry title: \"A Study of BGM0504 in Poorly Controlled Type 2 Diabetes Patients Only Through Diet and Exercise\".\nRegistry summary: \"This is a multicenter, randomized, double-blind, placebo-controlled phase III clinical study to evaluate the efficacy and safety of BGM0504 in patients with type 2 diabetes (T2D) with poor glycemic control only through diet and exercise. The main purpose is to evaluate the clinical efficacy of BGM0504 injection monotherapy for 32 weeks compared with placebo in Chinese patients with type 2 diabetes with poor glycemic control only through diet and exercise, and to evaluate the clinical efficacy and safety of BGM0504…\"\nPlanned phase: Phase 3. Study type: INTERVENTIONAL.\nPlanned interventions: DRUG: Drug: 5 mg BGM0504 Administered SC; DRUG: Drug: : 10 mg BGM0504 Administered SC; DRUG: Drug: Placebo Administered SC.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Change from Baseline in M-value (Baseline up to Month 3)",
+          "B": "Change From Baseline in Hemoglobin A1c (HbA1c) (Week 0 to Week 32)",
+          "C": "Relative change in body weight (From baseline (week 0) to week 84)",
+          "D": "Changes in Mean Sitting Systolic Blood Pressure (MSSBP) (12 Weeks)"
+        },
+        "ground_truth": {
+          "answer": "B",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Change From Baseline in Hemoglobin A1c (HbA1c) (Week 0 to Week 32)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT06716203",
+          "source_url": "https://clinicaltrials.gov/study/NCT06716203",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-13|2026-10|2024-12-04"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes Mellitus (T2DM)",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-13"
+        }
+      },
+      {
+        "id": "MED-000055",
+        "task_type": "endpoint_selection",
+        "query": "A clinical trial is being designed for Type 2 Diabetes Mellitus (T2DM).\nRegistry title: \"A Study of BGM0504 in Participants With Type 2 Diabetes\".\nRegistry summary: \"This trial is conducted in China. The aim of the trial is to evaluate the efficacy and safety of BGM0504 versus semaglutide as add-on to metformin and/or sulfonylureas in patients with type 2 diabetes\"\nPlanned phase: Phase 3. Study type: INTERVENTIONAL.\nPlanned interventions: DRUG: Drug: 5 mg BGM0504 Administered SC; DRUG: Drug:10 mg BGM0504 Administered SC; DRUG: Drug: Semaglutide Administered SC.\nBased only on this trial design information, which option lists the primary outcome measure(s) that the trial actually registered?",
+        "options": {
+          "A": "Change From Baseline in Hemoglobin A1c (HbA1c) (Week 0 to Week 32)",
+          "B": "Percent change in body weight from baseline at Week 64 (up to 64 weeks)",
+          "C": "Change from baseline in AUC of endogenous insulin (From baseline up to Week 104)",
+          "D": "Change in the Visceral Adiposity Index (VAI) from baseline to week 12 (Baseline and week 12)"
+        },
+        "ground_truth": {
+          "answer": "A",
+          "type": "registry_reference",
+          "source_field": "primaryOutcomes",
+          "field_path": "protocolSection.outcomesModule.primaryOutcomes",
+          "value": "Change From Baseline in Hemoglobin A1c (HbA1c) (Week 0 to Week 32)",
+          "note": "Registered reference, not a claim of medical optimality."
+        },
+        "evidence": {
+          "nct_id": "NCT06716216",
+          "source_url": "https://clinicaltrials.gov/study/NCT06716216",
+          "source_field": "primaryOutcomes",
+          "record_version": "2026-11-13|2026-10|2024-12-04"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes Mellitus (T2DM)",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "record_last_update": "2026-11-13"
+        }
+      },
+      {
+        "id": "MED-000056",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 2 interventional trial is planned for Obesity, Diabetes.\nRegistry title: \"Investigating the Use of Quercetin on Glucose Absorption in Obesity, and Obesity With Type 2 Diabetes\".\nPlanned intervention(s): OTHER: Quercetin; OTHER: Placebo.\nTrial design: allocation non_randomized, model crossover, masking triple.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an exclusion criterion that this trial registered?",
+        "options": {
+          "A": "Hepatic or renal impairment: ALT and/or AST ≥2.5×ULN; total bilirubin ≥1.5×ULN; eGFR \\<60 mL·min-¹·1.73 m-²",
+          "B": "Abnormal thyroid function that is not stably controlled with medication at screening (for at least 3 months)",
+          "C": "Poorly controlled hypertension at screening: systolic ≥ 180 mmHg or diastolic ≥ 100 mmHg",
+          "D": "Diabetic subjects who choose not to self-monitor glucose daily by glucometer will be excluded"
+        },
+        "ground_truth": {
+          "answer": "D",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#exclusion",
+          "value": "Diabetic subjects who choose not to self-monitor glucose daily by glucometer will be excluded",
+          "polarity": "exclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT00065676",
+          "source_url": "https://clinicaltrials.gov/study/NCT00065676",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-12|2026-01-22|2003-07-31"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Obesity",
+          "phase": "PHASE2",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "exclusion",
+          "record_last_update": "2026-11-12"
+        }
+      },
+      {
+        "id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 2 interventional trial is planned for Overweight or Obesity, CKD, Type 2 Diabetes.\nRegistry title: \"A Study of Retatrutide (LY3437943) on Renal Function in Participants With Overweight or Obesity and Chronic Kidney Disease With or Without Type 2 Diabetes\".\nPlanned intervention(s): DRUG: Retatrutide; DRUG: Placebo.\nTrial design: allocation randomized, model parallel, masking double.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an inclusion criterion that this trial registered?",
+        "options": {
+          "A": "Diagnosed with type 2 diabetes mellitus (T2DM) for at least 3 months according to the diagnostic criteria of the Chinese Guidelines for the Prevention and Treatment of Diabetes",
+          "B": "have T2D with an HbA1c ≤ 9.5% and treated with diet and exercise only or with stable doses of up to 3 oral antihyperglycemic medications, with or without basal insulin for at least 90 days before screening",
+          "C": "Women of childbearing potential (WOCBP): highly effective contraception ≥6 months prior to screening, throughout study, and 90 days post-last dose; negative pregnancy test within 24 hrs of first dose; no intent to donate sperm/ova",
+          "D": "On a stable dose of metformin hydrochloride (≥1500 mg/day, or maximum tolerated dose ≥1000 mg/day) for at least 12 weeks during the 3 months prior to screening, while maintaining diet control and exercise therapy"
+        },
+        "ground_truth": {
+          "answer": "B",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#inclusion",
+          "value": "have T2D with an HbA1c ≤ 9.5% and treated with diet and exercise only or with stable doses of up to 3 oral antihyperglycemic medications, with or without basal insulin for at least 90 days before screening",
+          "polarity": "inclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT05936151",
+          "source_url": "https://clinicaltrials.gov/study/NCT05936151",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-09|2026-11|2023-07-07"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Overweight or Obesity",
+          "phase": "PHASE2",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "inclusion",
+          "record_last_update": "2026-11-09"
+        }
+      },
+      {
+        "id": "MED-000058",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 3 interventional trial is planned for Type 2 Diabetes.\nRegistry title: \"Effect of Retatrutide Compared With Placebo in Participants With Type 2 Diabetes and Moderate or Severe Renal Impairment, With Inadequate Glycemic Control on Basal Insulin, With or Without Metformin …\".\nPlanned intervention(s): DRUG: Retatrutide; DRUG: Placebo.\nTrial design: allocation randomized, model parallel, masking double.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an inclusion criterion that this trial registered?",
+        "options": {
+          "A": "Are of stable weight for at least 90 days prior to screening",
+          "B": "Be of stable weight (± 5%) for at least 3 months before screening",
+          "C": "Age 18 years or above at the time of signing the informed consent",
+          "D": "Body mass index (BMI) ≥23 kg/m2 at screening (Visit 1)"
+        },
+        "ground_truth": {
+          "answer": "A",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#inclusion",
+          "value": "Are of stable weight for at least 90 days prior to screening",
+          "polarity": "inclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT06297603",
+          "source_url": "https://clinicaltrials.gov/study/NCT06297603",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-13|2026-11|2024-03-07"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "inclusion",
+          "record_last_update": "2026-11-13"
+        }
+      },
+      {
+        "id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 3 interventional trial is planned for Type 2 Diabetes, Hypertension.\nRegistry title: \"A Randomized, Double-blind, Multi-center, Active-controlled, Phase 3 Clinical Trial to Evaluate the Efficacy and Safety of Combination Therapy of THP-00101, THP-00102, and THP-00103 in Subjects With …\".\nPlanned intervention(s): DRUG: THP-00101; DRUG: THP-00102; DRUG: THP-00103; DRUG: THP-00104.\nTrial design: allocation randomized, model parallel, masking quadruple.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an inclusion criterion that this trial registered?",
+        "options": {
+          "A": "If not taking antihypertensive agents: MSSBP less than 160 mmHg and more than 140 mmHg",
+          "B": "At screening, my body mass index (BMI) is ≤40.0 kg/m²",
+          "C": "Before screening, I have been on stable treatment with 1 to 3 of non-insulin antihyperglycemic drugs for at least 90 days",
+          "D": "Are of stable weight for at least 90 days prior to screening"
+        },
+        "ground_truth": {
+          "answer": "A",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#inclusion",
+          "value": "If not taking antihypertensive agents: MSSBP less than 160 mmHg and more than 140 mmHg",
+          "polarity": "inclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT06647745",
+          "source_url": "https://clinicaltrials.gov/study/NCT06647745",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-09|2026-11|2024-10-18"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "inclusion",
+          "record_last_update": "2026-11-09"
+        }
+      },
+      {
+        "id": "MED-000060",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 3 interventional trial is planned for Type 2 Diabetes Mellitus (T2DM).\nRegistry title: \"A Study of BGM0504 in Poorly Controlled Type 2 Diabetes Patients Only Through Diet and Exercise\".\nPlanned intervention(s): DRUG: Drug: 5 mg BGM0504 Administered SC; DRUG: Drug: : 10 mg BGM0504 Administered SC; DRUG: Drug: Placebo Administered SC.\nTrial design: allocation randomized, model parallel, masking double.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an inclusion criterion that this trial registered?",
+        "options": {
+          "A": "have been diagnosed at least 6 months before informed consent",
+          "B": "Diet and exercise intervention alone for at least 8 weeks",
+          "C": "Be of stable weight (± 5%) for at least 3 months before screening",
+          "D": "Has a body mass index (BMI) of ≥23 kg/m\\^2 to ≤39.9 kg/m\\^2"
+        },
+        "ground_truth": {
+          "answer": "C",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#inclusion",
+          "value": "Be of stable weight (± 5%) for at least 3 months before screening",
+          "polarity": "inclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT06716203",
+          "source_url": "https://clinicaltrials.gov/study/NCT06716203",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-13|2026-10|2024-12-04"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes Mellitus (T2DM)",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "inclusion",
+          "record_last_update": "2026-11-13"
+        }
+      },
+      {
+        "id": "MED-000061",
+        "task_type": "eligibility_criteria_matching",
+        "query": "A Phase 3 interventional trial is planned for Type 2 Diabetes Mellitus (T2DM).\nRegistry title: \"A Study of BGM0504 in Participants With Type 2 Diabetes\".\nPlanned intervention(s): DRUG: Drug: 5 mg BGM0504 Administered SC; DRUG: Drug:10 mg BGM0504 Administered SC; DRUG: Drug: Semaglutide Administered SC.\nTrial design: allocation randomized, model parallel, masking none.\nThe protocol must state its participant eligibility rules before enrolment.\nWhich of the following is an inclusion criterion that this trial registered?",
+        "options": {
+          "A": "BG \\< 15 mmol/L at screening (central laboratory)",
+          "B": "Fasting Plasma Glucose (FPG) ≤ 15.0 mmoL/L",
+          "C": "Be of stable weight (± 5%) for at least 3 months before screening",
+          "D": "Body mass index (BMI) ≥20.0 kg/m2 and ≤42.0 kg/m2 at screening/randomization"
+        },
+        "ground_truth": {
+          "answer": "C",
+          "type": "registry_reference",
+          "source_field": "eligibilityCriteria",
+          "field_path": "protocolSection.eligibilityModule.eligibilityCriteria#inclusion",
+          "value": "Be of stable weight (± 5%) for at least 3 months before screening",
+          "polarity": "inclusion",
+          "note": "Registered eligibility text; the alternative options come from other trials or documented mutations."
+        },
+        "evidence": {
+          "nct_id": "NCT06716216",
+          "source_url": "https://clinicaltrials.gov/study/NCT06716216",
+          "source_field": "eligibilityCriteria",
+          "record_version": "2026-11-13|2026-10|2024-12-04"
+        },
+        "quality": {
+          "status": "valid",
+          "experimental": false,
+          "temporal_validation_required": false
+        },
+        "context": {
+          "condition": "Type 2 Diabetes Mellitus (T2DM)",
+          "phase": "PHASE3",
+          "study_type": "INTERVENTIONAL",
+          "polarity": "inclusion",
+          "record_last_update": "2026-11-13"
+        }
+      }
+    ],
+    "results": [
+      {
+        "cell_key": "MED-000050|native-1|0",
+        "item_id": "MED-000050",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "538622cc0f6763ac0c363b48f8b373bbac1b99ed722aa6333ae55e2a2da33f58",
+        "started_at": "2026-11-16T14:04:20.435Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 1679,
+        "usage": {
+          "prompt_tokens": 147,
+          "completion_tokens": 71,
+          "total_tokens": 474
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:22.114Z"
+      },
+      {
+        "cell_key": "MED-000051|native-1|0",
+        "item_id": "MED-000051",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "37315b284a2ec591950e4d9cc11681cfe40504c46fa4e903cfe6790b646c3b62",
+        "started_at": "2026-11-16T14:04:20.435Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "C",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 5387,
+        "usage": {
+          "prompt_tokens": 180,
+          "completion_tokens": 126,
+          "total_tokens": 562
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:25.822Z"
+      },
+      {
+        "cell_key": "MED-000051|native-2|0",
+        "item_id": "MED-000051",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "37315b284a2ec591950e4d9cc11681cfe40504c46fa4e903cfe6790b646c3b62",
+        "started_at": "2026-11-16T14:04:22.114Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "C",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 4028,
+        "usage": {
+          "prompt_tokens": 105,
+          "completion_tokens": 122,
+          "total_tokens": 611
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:26.142Z"
+      },
+      {
+        "cell_key": "MED-000050|native-2|0",
+        "item_id": "MED-000050",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "538622cc0f6763ac0c363b48f8b373bbac1b99ed722aa6333ae55e2a2da33f58",
+        "started_at": "2026-11-16T14:04:20.435Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 6378,
+        "usage": {
+          "prompt_tokens": 72,
+          "completion_tokens": 165,
+          "total_tokens": 621
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:26.813Z"
+      },
+      {
+        "cell_key": "MED-000052|native-1|0",
+        "item_id": "MED-000052",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "e7c95eb074cf64a0079a99ce43666fe9c65b4469faeeb1b175c74f8a904deb12",
+        "started_at": "2026-11-16T14:04:25.822Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "B",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 1726,
+        "usage": {
+          "prompt_tokens": 174,
+          "completion_tokens": 86,
+          "total_tokens": 516
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:27.549Z"
+      },
+      {
+        "cell_key": "MED-000053|native-1|0",
+        "item_id": "MED-000053",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "a61e1f3673fcdf99d642736cea93874a7502e1c6d478d6f338a36ae296c42d32",
+        "started_at": "2026-11-16T14:04:26.813Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "C",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 1172,
+        "usage": {
+          "prompt_tokens": 143,
+          "completion_tokens": 105,
+          "total_tokens": 504
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:27.985Z"
+      },
+      {
+        "cell_key": "MED-000054|native-1|0",
+        "item_id": "MED-000054",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "aabe5e17328682fc9a92c9ddbc015bd19a2ac872c35da7416c4780f31ee590d3",
+        "started_at": "2026-11-16T14:04:28.004Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "B",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 1379,
+        "usage": {
+          "prompt_tokens": 197,
+          "completion_tokens": 63,
+          "total_tokens": 516
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:29.383Z"
+      },
+      {
+        "cell_key": "MED-000052|native-2|0",
+        "item_id": "MED-000052",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "e7c95eb074cf64a0079a99ce43666fe9c65b4469faeeb1b175c74f8a904deb12",
+        "started_at": "2026-11-16T14:04:26.163Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "B",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 4019,
+        "usage": {
+          "prompt_tokens": 99,
+          "completion_tokens": 179,
+          "total_tokens": 662
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:30.182Z"
+      },
+      {
+        "cell_key": "MED-000055|native-1|0",
+        "item_id": "MED-000055",
+        "task_type": "endpoint_selection",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "394e31c99df0d5ad819f55f0a50c1cad653b28b4f65eaf4975921f17e1db48de",
+        "started_at": "2026-11-16T14:04:30.182Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 1791,
+        "usage": {
+          "prompt_tokens": 145,
+          "completion_tokens": 175,
+          "total_tokens": 576
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:31.973Z"
+      },
+      {
+        "cell_key": "MED-000054|native-2|0",
+        "item_id": "MED-000054",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "aabe5e17328682fc9a92c9ddbc015bd19a2ac872c35da7416c4780f31ee590d3",
+        "started_at": "2026-11-16T14:04:29.383Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "B",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 3517,
+        "usage": {
+          "prompt_tokens": 122,
+          "completion_tokens": 134,
+          "total_tokens": 640
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:32.900Z"
+      },
+      {
+        "cell_key": "MED-000053|native-2|0",
+        "item_id": "MED-000053",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "a61e1f3673fcdf99d642736cea93874a7502e1c6d478d6f338a36ae296c42d32",
+        "started_at": "2026-11-16T14:04:27.549Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "C",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 7957,
+        "usage": {
+          "prompt_tokens": 68,
+          "completion_tokens": 436,
+          "total_tokens": 888
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:35.506Z"
+      },
+      {
+        "cell_key": "MED-000055|native-2|0",
+        "item_id": "MED-000055",
+        "task_type": "endpoint_selection",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "394e31c99df0d5ad819f55f0a50c1cad653b28b4f65eaf4975921f17e1db48de",
+        "started_at": "2026-11-16T14:04:31.997Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 3637,
+        "usage": {
+          "prompt_tokens": 70,
+          "completion_tokens": 159,
+          "total_tokens": 613
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:35.635Z"
+      },
+      {
+        "cell_key": "MED-000057|native-1|0",
+        "item_id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "70b0de64384424183623c43a16709e6e3852b1f447153a69d90dd33785d8dfb0",
+        "started_at": "2026-11-16T14:04:35.657Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "B",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 3804,
+        "usage": {
+          "prompt_tokens": 188,
+          "completion_tokens": 420,
+          "total_tokens": 864
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:39.462Z"
+      },
+      {
+        "cell_key": "MED-000056|native-1|0",
+        "item_id": "MED-000056",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "7000b72823c2e12efb10040f73c0a573a7e20c96836fcce770e23cc169ec5770",
+        "started_at": "2026-11-16T14:04:32.900Z",
+        "status": "success",
+        "response_text": "答案: D",
+        "parsed_answer": "D",
+        "canonical_answer": "D",
+        "ground_truth": "D",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 12436,
+        "usage": {
+          "prompt_tokens": 212,
+          "completion_tokens": 1835,
+          "total_tokens": 2175
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:45.336Z"
+      },
+      {
+        "cell_key": "MED-000057|native-2|0",
+        "item_id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "70b0de64384424183623c43a16709e6e3852b1f447153a69d90dd33785d8dfb0",
+        "started_at": "2026-11-16T14:04:39.462Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "B",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 8625,
+        "usage": {
+          "prompt_tokens": 113,
+          "completion_tokens": 644,
+          "total_tokens": 1141
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:04:48.088Z"
+      },
+      {
+        "cell_key": "MED-000058|native-1|0",
+        "item_id": "MED-000058",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "5d96604d23c5859a63a9eb2a34f1216066a0e3cbcef5b2e1eb8ea8e7fa2850e2",
+        "started_at": "2026-11-16T14:04:45.336Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 47073,
+        "usage": {
+          "prompt_tokens": 194,
+          "completion_tokens": 8192,
+          "total_tokens": 8514
+        },
+        "finish_reason": "max-tokens",
+        "derived_from_reasoning": true,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:05:32.409Z"
+      },
+      {
+        "cell_key": "MED-000056|native-2|0",
+        "item_id": "MED-000056",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "7000b72823c2e12efb10040f73c0a573a7e20c96836fcce770e23cc169ec5770",
+        "started_at": "2026-11-16T14:04:35.506Z",
+        "status": "success",
+        "response_text": "答案: D",
+        "parsed_answer": "D",
+        "canonical_answer": "D",
+        "ground_truth": "D",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 87889,
+        "usage": {
+          "prompt_tokens": 137,
+          "completion_tokens": 5485,
+          "total_tokens": 5878
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:06:03.396Z"
+      },
+      {
+        "cell_key": "MED-000059|native-1|0",
+        "item_id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "5d73cead58dda72ebe323088bc6959b24d49523a002f25ae7d547b867e6cffe5",
+        "started_at": "2026-11-16T14:05:32.409Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "A",
+        "correct": true,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 49176,
+        "usage": {
+          "prompt_tokens": 247,
+          "completion_tokens": 8192,
+          "total_tokens": 8567
+        },
+        "finish_reason": "max-tokens",
+        "derived_from_reasoning": true,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:06:21.585Z"
+      },
+      {
+        "cell_key": "MED-000060|native-1|0",
+        "item_id": "MED-000060",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "fe6f77e7e46e28c76b7ccdce71a9d60aa2327ced80cdc651bf785bcc8c5c3bcf",
+        "started_at": "2026-11-16T14:06:21.607Z",
+        "status": "success",
+        "response_text": "答案: D",
+        "parsed_answer": "D",
+        "canonical_answer": "D",
+        "ground_truth": "C",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 20056,
+        "usage": {
+          "prompt_tokens": 212,
+          "completion_tokens": 3321,
+          "total_tokens": 3661
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:06:41.663Z"
+      },
+      {
+        "cell_key": "MED-000060|native-2|0",
+        "item_id": "MED-000060",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "fe6f77e7e46e28c76b7ccdce71a9d60aa2327ced80cdc651bf785bcc8c5c3bcf",
+        "started_at": "2026-11-16T14:06:41.663Z",
+        "status": "success",
+        "response_text": "答案: B",
+        "parsed_answer": "B",
+        "canonical_answer": "B",
+        "ground_truth": "C",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 5863,
+        "usage": {
+          "prompt_tokens": 137,
+          "completion_tokens": 342,
+          "total_tokens": 735
+        },
+        "finish_reason": "stop",
+        "derived_from_reasoning": false,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:06:47.526Z"
+      },
+      {
+        "cell_key": "MED-000061|native-1|0",
+        "item_id": "MED-000061",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-1",
+        "model_label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "d583dc8582782915803298e858842ecfcbec30a26b781948e3a9d6f3f9ec8a2c",
+        "started_at": "2026-11-16T14:06:47.526Z",
+        "status": "success",
+        "response_text": "答案: A",
+        "parsed_answer": "A",
+        "canonical_answer": "A",
+        "ground_truth": "C",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 47543,
+        "usage": {
+          "prompt_tokens": 210,
+          "completion_tokens": 8192,
+          "total_tokens": 8530
+        },
+        "finish_reason": "max-tokens",
+        "derived_from_reasoning": true,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:07:35.069Z"
+      },
+      {
+        "cell_key": "MED-000059|native-2|0",
+        "item_id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "5d73cead58dda72ebe323088bc6959b24d49523a002f25ae7d547b867e6cffe5",
+        "started_at": "2026-11-16T14:06:03.396Z",
+        "status": "success",
+        "response_text": "答案: C",
+        "parsed_answer": "C",
+        "canonical_answer": "C",
+        "ground_truth": "A",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 118992,
+        "usage": {
+          "prompt_tokens": 44,
+          "completion_tokens": 8192,
+          "total_tokens": 8620
+        },
+        "finish_reason": "max-tokens",
+        "derived_from_reasoning": true,
+        "attempts": 1,
+        "error": null,
+        "finished_at": "2026-11-16T14:08:02.388Z"
+      },
+      {
+        "cell_key": "MED-000058|native-2|0",
+        "item_id": "MED-000058",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "5d96604d23c5859a63a9eb2a34f1216066a0e3cbcef5b2e1eb8ea8e7fa2850e2",
+        "started_at": "2026-11-16T14:04:48.118Z",
+        "status": "error",
+        "response_text": "",
+        "parsed_answer": null,
+        "canonical_answer": null,
+        "ground_truth": "A",
+        "correct": null,
+        "latency_ms": 0,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "attempts": 2,
+        "error": {
+          "code": "TIMEOUT",
+          "message": "deepseek-account · DeepSeek-V4-Pro timed out after 120000ms",
+          "retryable": true
+        },
+        "finished_at": "2026-11-16T14:08:48.765Z"
+      },
+      {
+        "cell_key": "MED-000061|native-2|0",
+        "item_id": "MED-000061",
+        "task_type": "eligibility_criteria_matching",
+        "model_id": "native-2",
+        "model_label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "repeat": 0,
+        "option_map": {
+          "A": "A",
+          "B": "B",
+          "C": "C",
+          "D": "D"
+        },
+        "display_order": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "prompt_sha256": "d583dc8582782915803298e858842ecfcbec30a26b781948e3a9d6f3f9ec8a2c",
+        "started_at": "2026-11-16T14:07:35.089Z",
+        "status": "success",
+        "response_text": "答案: D",
+        "parsed_answer": "D",
+        "canonical_answer": "D",
+        "ground_truth": "C",
+        "correct": false,
+        "parse_confidence": "high",
+        "matched_by": "zh-answer-line",
+        "latency_ms": 117282,
+        "usage": {
+          "prompt_tokens": 7,
+          "completion_tokens": 8192,
+          "total_tokens": 8583
+        },
+        "finish_reason": "max-tokens",
+        "derived_from_reasoning": true,
+        "attempts": 2,
+        "error": null,
+        "finished_at": "2026-11-16T14:11:32.990Z"
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-11-16T14:04:20.386Z",
+        "level": "info",
+        "message": "Created run with 12 items × 2 models."
+      },
+      {
+        "at": "2026-11-16T14:04:20.410Z",
+        "level": "info",
+        "message": "Starting evaluation."
+      },
+      {
+        "at": "2026-11-16T14:04:20.435Z",
+        "level": "info",
+        "message": "24 cells pending."
+      },
+      {
+        "at": "2026-11-16T14:06:48.120Z",
+        "level": "warn",
+        "message": "Retry 1/1 for MED-000058 · deepseek-account · DeepSeek-V4-Pro: deepseek-account · DeepSeek-V4-Pro timed out after 120000ms"
+      },
+      {
+        "at": "2026-11-16T14:09:35.099Z",
+        "level": "warn",
+        "message": "Retry 1/1 for MED-000061 · deepseek-account · DeepSeek-V4-Pro: deepseek-account · DeepSeek-V4-Pro timed out after 120000ms"
+      },
+      {
+        "at": "2026-11-16T14:11:33.009Z",
+        "level": "warn",
+        "message": "Run finished: 23 scored, 0 unparsed, 1 failed."
+      }
+    ],
+    "progress": {
+      "total": 24,
+      "done": 24,
+      "success": 23,
+      "parse_failed": 0,
+      "error": 1,
+      "percent": 100
+    },
+    "cancel_requested": false,
+    "error": ""
+  },
+  "meta": {
+    "run_id": "run-20261116140420-yydlyz",
+    "generated_at": "2026-11-16T14:11:41.154Z",
+    "sample": {
+      "items": 12,
+      "models": 2,
+      "cells": 24,
+      "scored": 23,
+      "failures": 1,
+      "unparsed": 0,
+      "reasoning_derived": 5,
+      "repeats": 1,
+      "benchmark_id": "evalforge-type-2-diabetes-2026-11-16-7ste",
+      "benchmark_name": "EvalForge Type 2 Diabetes v0.1",
+      "scoreable": true
+    },
+    "models": [
+      {
+        "model_id": "native-1",
+        "label": "deepseek-account · DeepSeek-V4.1-Flash",
+        "model": "deepseek-flash",
+        "provider": "deepseek-account",
+        "kind": "native",
+        "attempts": 12,
+        "scored": 12,
+        "correct": 9,
+        "accuracy": 0.75,
+        "macro_f1": 0.7317,
+        "f1_by_label": {
+          "A": {
+            "precision": 0.8,
+            "recall": 1,
+            "f1": 0.8889,
+            "support": 4
+          },
+          "C": {
+            "precision": 0.6667,
+            "recall": 0.5,
+            "f1": 0.5714,
+            "support": 4
+          },
+          "B": {
+            "precision": 1,
+            "recall": 0.6667,
+            "f1": 0.8,
+            "support": 3
+          },
+          "D": {
+            "precision": 0.5,
+            "recall": 1,
+            "f1": 0.6667,
+            "support": 1
+          }
+        },
+        "failures": 0,
+        "failure_rate": 0,
+        "unparsed": 0,
+        "total_tokens": 35459,
+        "mean_latency_ms": 16102
+      },
+      {
+        "model_id": "native-2",
+        "label": "deepseek-account · DeepSeek-V4-Pro",
+        "model": "deepseek-v4-pro",
+        "provider": "deepseek-account",
+        "kind": "native",
+        "attempts": 12,
+        "scored": 11,
+        "correct": 8,
+        "accuracy": 0.7273,
+        "macro_f1": 0.7238,
+        "f1_by_label": {
+          "C": {
+            "precision": 0.6667,
+            "recall": 0.5,
+            "f1": 0.5714,
+            "support": 4
+          },
+          "A": {
+            "precision": 1,
+            "recall": 0.6667,
+            "f1": 0.8,
+            "support": 3
+          },
+          "B": {
+            "precision": 0.75,
+            "recall": 1,
+            "f1": 0.8571,
+            "support": 3
+          },
+          "D": {
+            "precision": 0.5,
+            "recall": 1,
+            "f1": 0.6667,
+            "support": 1
+          }
+        },
+        "failures": 1,
+        "failure_rate": 0.0833,
+        "unparsed": 0,
+        "total_tokens": 28992,
+        "mean_latency_ms": 33472
+      }
+    ],
+    "tasks": [
+      {
+        "task_type": "endpoint_selection",
+        "items": 6,
+        "cells": 12,
+        "per_model": [
+          {
+            "model_id": "native-1",
+            "label": "deepseek-account · DeepSeek-V4.1-Flash",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1
+          },
+          {
+            "model_id": "native-2",
+            "label": "deepseek-account · DeepSeek-V4-Pro",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1
+          }
+        ],
+        "best": {
+          "model_id": "native-1",
+          "label": "deepseek-account · DeepSeek-V4.1-Flash",
+          "n": 6,
+          "correct": 6,
+          "accuracy": 1
+        },
+        "worst": {
+          "model_id": "native-2",
+          "label": "deepseek-account · DeepSeek-V4-Pro",
+          "n": 6,
+          "correct": 6,
+          "accuracy": 1
+        }
+      },
+      {
+        "task_type": "eligibility_criteria_matching",
+        "items": 6,
+        "cells": 11,
+        "per_model": [
+          {
+            "model_id": "native-1",
+            "label": "deepseek-account · DeepSeek-V4.1-Flash",
+            "n": 6,
+            "correct": 3,
+            "accuracy": 0.5
+          },
+          {
+            "model_id": "native-2",
+            "label": "deepseek-account · DeepSeek-V4-Pro",
+            "n": 5,
+            "correct": 2,
+            "accuracy": 0.4
+          }
+        ],
+        "best": {
+          "model_id": "native-1",
+          "label": "deepseek-account · DeepSeek-V4.1-Flash",
+          "n": 6,
+          "correct": 3,
+          "accuracy": 0.5
+        },
+        "worst": {
+          "model_id": "native-2",
+          "label": "deepseek-account · DeepSeek-V4-Pro",
+          "n": 5,
+          "correct": 2,
+          "accuracy": 0.4
+        }
+      }
+    ],
+    "difficulty": [
+      {
+        "item_id": "MED-000050",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000051",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000052",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000053",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000054",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000055",
+        "task_type": "endpoint_selection",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000056",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0.5,
+        "difficulty": 0.5,
+        "spread": 1,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000058",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 1,
+        "n_cells": 1,
+        "p_correct": 1,
+        "difficulty": 0,
+        "spread": null,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0.5,
+        "difficulty": 0.5,
+        "spread": 1,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000060",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0,
+        "difficulty": 1,
+        "spread": 0,
+        "quality_status": "valid"
+      },
+      {
+        "item_id": "MED-000061",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0,
+        "difficulty": 1,
+        "spread": 0,
+        "quality_status": "valid"
+      }
+    ],
+    "discrimination": [
+      {
+        "item_id": "MED-000050",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000051",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000052",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000053",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000054",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000055",
+        "task_type": "endpoint_selection",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000056",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 1,
+        "p_low": 1,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 0,
+        "p_low": 1,
+        "d": -1,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000058",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 1,
+        "p_low": null,
+        "d": null,
+        "n_high_cells": 1,
+        "n_low_cells": 0,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 1,
+        "p_low": 0,
+        "d": 1,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000060",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 0,
+        "p_low": 0,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      },
+      {
+        "item_id": "MED-000061",
+        "task_type": "eligibility_criteria_matching",
+        "p_high": 0,
+        "p_low": 0,
+        "d": 0,
+        "n_high_cells": 1,
+        "n_low_cells": 1,
+        "mode": "exploratory"
+      }
+    ],
+    "discrimination_mode": "exploratory",
+    "capability_groups": null,
+    "exploratory_groups": {
+      "high": [
+        "native-1"
+      ],
+      "low": [
+        "native-2"
+      ]
+    },
+    "monotonicity": {
+      "status": "not_computable",
+      "reason": "no ordered model series was provided",
+      "points": [],
+      "rho": null
+    },
+    "stability": [],
+    "contentious": [
+      {
+        "item_id": "MED-000057",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0.5,
+        "difficulty": 0.5,
+        "spread": 1,
+        "quality_status": "valid",
+        "distance_from_half": 0,
+        "question": "A Phase 2 interventional trial is planned for Overweight or Obesity, CKD, Type 2 Diabetes.\nRegistry title: \"A Study of Retatrutide (LY3437943) on Renal Function in Participants With Overweight or Obesity and Chronic Kidn",
+        "nct_id": "NCT05936151",
+        "ground_truth": "B"
+      },
+      {
+        "item_id": "MED-000059",
+        "task_type": "eligibility_criteria_matching",
+        "n_models": 2,
+        "n_cells": 2,
+        "p_correct": 0.5,
+        "difficulty": 0.5,
+        "spread": 1,
+        "quality_status": "valid",
+        "distance_from_half": 0,
+        "question": "A Phase 3 interventional trial is planned for Type 2 Diabetes, Hypertension.\nRegistry title: \"A Randomized, Double-blind, Multi-center, Active-controlled, Phase 3 Clinical Trial to Evaluate the Efficacy and Safety of Com",
+        "nct_id": "NCT06647745",
+        "ground_truth": "A"
+      }
+    ],
+    "failures": [
+      {
+        "model_id": "native-2",
+        "label": "deepseek-account · DeepSeek-V4-Pro",
+        "code": "TIMEOUT",
+        "count": 1,
+        "sample": "deepseek-account · DeepSeek-V4-Pro timed out after 120000ms"
+      }
+    ],
+    "notes": [
+      "Accuracy denominators exclude API failures and unparsable replies; both are reported separately.",
+      "Answers recovered from a truncated reasoning trace are marked `derived_from_reasoning` in eval_results.csv.",
+      "Discrimination is exploratory: groups were derived from this run's overall accuracy, not from an independent capability measure.",
+      "Registry-derived answers describe historical trial design practice, not optimal clinical decisions."
+    ]
+  }
+}

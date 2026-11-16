@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "EvalForge",
+    "description": "Builds verifiable medical benchmarks from ClinicalTrials.gov registry records and runs multi-model evaluation with meta-evaluation."
+  },
+  "nav": "EvalForge",
+  "tabs": {
+    "data": "Data Explorer",
+    "builder": "Benchmark Builder",
+    "eval": "Evaluation",
+    "meta": "Meta-Eval",
+    "reports": "Reports"
+  }
+}
